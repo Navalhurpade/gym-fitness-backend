@@ -1,0 +1,146 @@
+.email-containe {
+  width: 50px;
+  height: 100px;
+  overflow: hidden;
+}
+.envelope {
+  margin-top: -50px;
+  margin-left: -75px;
+  background-color: antiquewhite;
+  background-image: linear-gradient(
+    transparent 0%,
+    burlywood 49%,
+    transparent 50%
+  );
+  position: absolute;
+  width: 150px;
+  height: 100px;
+  box-shadow: 0 3px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0s;
+  transition-delay: 400ms;
+  z-index: 1;
+  outline: none;
+}
+.flap {
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: -50px;
+  border-top: 0px solid transparent;
+  border-right: 75px solid transparent;
+  border-left: 75px solid transparent;
+  border-bottom: 50px solid antiquewhite;
+  transition: transform 300ms linear, border-bottom 3s;
+}
+.infoil {
+  position: absolute;
+  bottom: 100px;
+  left: 12px;
+  border-top: 0px solid transparent;
+  border-right: 63px solid transparent;
+  border-left: 63px solid transparent;
+  border-bottom: 40px solid tomato;
+  transition: border-bottom 150ms ease-in;
+}
+.envelope:after {
+  position: absolute;
+  content: "";
+  left: 10px;
+  bottom: 50px;
+  width: 130px;
+  height: 80px;
+  background-color: cornsilk;
+  background-image: linear-gradient(transparent 0%, lightgray 100%);
+  box-shadow: 0 -0px 20px rgba(0, 0, 0, 0.3);
+  z-index: 0;
+  transition: height 300ms;
+}
+.envelope:before {
+  position: absolute;
+  content: "";
+  left: 0px;
+  bottom: 0px;
+  height: 50px;
+  width: 150px;
+  background-color: beige;
+  z-index: 2;
+}
+.folds:before {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 0;
+  left: 0;
+  border-right: 0px solid transparent;
+  border-top: 50px solid transparent;
+  border-bottom: 50px solid transparent;
+  border-left: 75px solid antiquewhite;
+  z-index: 2;
+}
+.folds:after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 0;
+  right: 0;
+  border-left: 0px solid transparent;
+  border-top: 50px solid transparent;
+  border-bottom: 50px solid transparent;
+  border-right: 75px solid antiquewhite;
+  z-index: 2;
+}
+.envelope:hover:after {
+  height: 40px;
+  bottom: 50px;
+}
+
+.envelope:target:after {
+  height: 40px;
+  bottom: 50px;
+}
+.envelope:target .flap {
+  transform: rotateX(180deg);
+  transform-origin: 50% 100%;
+  border-bottom: 50px solid white;
+  z-index: 5;
+}
+.envelope:target .infoil {
+  border-bottom: 0px solid brown;
+  z-index: 5;
+}
+.envelope:target {
+  transform: translateY(-2000px);
+  transition: transform 2s ease-in;
+}
+.newmail {
+  display: block;
+  position: absolute;
+  border: 4px solid;
+  color: white;
+  font-family: Helvetica, sans;
+  text-decoration: none;
+  font-weight: 900;
+  font-size: 20px;
+  text-align: center;
+  line-height: 60px;
+  padding: 0;
+  width: 120px;
+  height: 60px;
+  left: 50%;
+  top: 50%;
+  margin-left: -60px;
+  margin-top: -30px;
+  border-radius: 16px;
+  box-shadow: inset 0 -3px 2px #365264, 0 -2px 5px #365264;
+  outline: none;
+  transition: font-size 80ms ease-in, height 100ms linear, width 100ms linear,
+    line-height 100ms linear, margin 100ms linear;
+}
+.newmail:active {
+  width: 110px;
+  height: 50px;
+  margin-left: -55px;
+  margin-top: -25px;
+  line-height: 50px;
+  font-size: 18px;
+}
