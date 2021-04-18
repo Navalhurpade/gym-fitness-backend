@@ -5,12 +5,13 @@ import toast from "react-hot-toast";
 import api from "../api/http";
 import UserEditModal from "./UserEditModal";
 
-const UserTable = ({ users, setUsers, sendme }) => {
+const UserTable = ({ users, setUsers }) => {
   //Removing the admin acc from list !
   const removedAdmin = users.filter((u) => !u.isAdmin);
 
   const [search, setSearch] = useState("");
-  const [allUsers, setAllUsers] = useState(users);
+  const [searchedUsers, setSearchedUsers] = useState(users);
+  const [searchMode, setSearchMode] = useState(false);
 
   //for updating state of search input
   const handleSearch = (e) => {
@@ -29,17 +30,19 @@ const UserTable = ({ users, setUsers, sendme }) => {
 
     //KeyCode 8 mence BACKSPACE pressed !
     if (backspaceCode === 8 && length === 1) {
-      setAllUsers(removedAdmin);
+      setSearchMode(false);
+      setSearchedUsers(removedAdmin);
       return;
     }
 
     //performing case inSensetive search
-    const searchResult = allUsers.filter((u, index, arr) =>
+    const searchResult = searchedUsers.filter((u, index, arr) =>
       u.name.toLowerCase().startsWith(search.toLowerCase())
     );
 
     //updating All User upon every key press !
-    setAllUsers(searchResult);
+    setSearchMode(true);
+    setSearchedUsers(searchResult);
   };
 
   //This will handle User Deletion !
@@ -51,8 +54,8 @@ const UserTable = ({ users, setUsers, sendme }) => {
       console.log(problem);
       toast.error("Error Connecting to server !");
     } else {
-      const remainigUsers = allUsers.filter((u) => u._id !== id);
-      setAllUsers(remainigUsers);
+      const remainigUsers = searchedUsers.filter((u) => u._id !== id);
+      setSearchedUsers(remainigUsers);
       setUsers(remainigUsers);
       toast.success(data.info);
     }
@@ -81,7 +84,7 @@ const UserTable = ({ users, setUsers, sendme }) => {
         //add new and Updated users details in all Users
         const addedUpdatedUser = [...otherUsers, updatedUser];
         setUsers(addedUpdatedUser);
-        setAllUsers(addedUpdatedUser);
+        setSearchedUsers(addedUpdatedUser);
       } else {
         //Loging errors
         console.log(problem);
@@ -111,8 +114,8 @@ const UserTable = ({ users, setUsers, sendme }) => {
       } else {
         toast.success(data.info || "Registered new User");
         console.log(data.info);
-        setUsers([...allUsers, newUser]);
-        setAllUsers([...allUsers, newUser]);
+        setUsers([...searchedUsers, newUser]);
+        setSearchedUsers([...searchedUsers, newUser]);
       }
     } catch (error) {
       console.log(error);
@@ -144,28 +147,30 @@ const UserTable = ({ users, setUsers, sendme }) => {
           </tr>
         </thead>
         <tbody>
-          {users.map((usr, index) => {
-            return (
-              <tr className="row-header" key={index}>
-                <th itemScope="row">{index + 1}</th>
-                <td className="collumn">{usr.name}</td>
-                <td className="collumn">{usr.email}</td>
-                <td className="collumn">{usr.age}</td>
-                <td className="collumn">{usr.number}</td>
-                <td className="collumn">
-                  <img
-                    src={deleteIcon}
-                    width="25px"
-                    alt="delete-icon"
-                    onClick={() => handleDelete(usr._id)}
-                  />
-                </td>
-                <td>
-                  <UserEditModal data={usr} onUserEdit={handleUserEdit} />
-                </td>
-              </tr>
-            );
-          })}
+          {searchMode
+            ? searchedUsers
+            : users.map((usr, index) => {
+                return (
+                  <tr className="row-header" key={index}>
+                    <th itemScope="row">{index + 1}</th>
+                    <td className="collumn">{usr.name}</td>
+                    <td className="collumn">{usr.email}</td>
+                    <td className="collumn">{usr.age}</td>
+                    <td className="collumn">{usr.number}</td>
+                    <td className="collumn">
+                      <img
+                        src={deleteIcon}
+                        width="25px"
+                        alt="delete-icon"
+                        onClick={() => handleDelete(usr._id)}
+                      />
+                    </td>
+                    <td>
+                      <UserEditModal data={usr} onUserEdit={handleUserEdit} />
+                    </td>
+                  </tr>
+                );
+              })}
         </tbody>
       </table>
 

@@ -69,7 +69,11 @@ function PaymentHistory({ payments, setPayments, users, plans }) {
               allPayments.map((p, indx) => (
                 <tr key={indx}>
                   <td>{indx + 1}</td>
-                  <td>{p.userId.name}</td>
+                  {p.userId ? (
+                    <td>{p.userId.name}</td>
+                  ) : (
+                    <td style={{ color: "red" }}>user Deleted !</td>
+                  )}
                   <td>₹{p.amount}</td>
                   <td>{p.paymentDate}</td>
                   <td>{p.validUpto}</td>

@@ -22,7 +22,7 @@ function PlanCard({
 
             <ul className="card-ul">
               <li className="card-li">
-                Special Diat Plan{" "}
+                Special diet Plan{" "}
                 {specialDietPlan ? (
                   <img alt="checkedOrnot" src={checked} />
                 ) : (
@@ -30,7 +30,7 @@ function PlanCard({
                 )}
               </li>
               <li className="card-li">
-                Personal Trening
+                Personal Training
                 {personalTraining ? (
                   <img alt="checkedOrnot" src={checked} />
                 ) : (
@@ -47,7 +47,7 @@ function PlanCard({
                 )}
               </li>
               <li className="card-li">
-                Personal Coch for You{" "}
+                Personal Coach for You{" "}
                 {persnalCoch ? (
                   <img alt="checkedOrnot" src={checked} />
                 ) : (

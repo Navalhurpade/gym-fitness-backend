@@ -4,7 +4,7 @@ import { findToken } from "./userLogger";
 const { REACT_APP_Server_URL } = process.env;
 
 const axiosApi = axios.create({
-  baseURL: REACT_APP_Server_URL,
+  baseURL: "http://localhost:8080/",
 });
 
 axios.interceptors.request.use((req) => {
@@ -18,7 +18,7 @@ axios.interceptors.request.use((req) => {
 });
 
 const api = create({
-  baseURL: REACT_APP_Server_URL,
+  baseURL: "http://localhost:8080/",
 });
 
 const foundToken = findToken();

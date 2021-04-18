@@ -66,9 +66,9 @@ const AdminPage = () => {
       });
 
     toast.promise(promise, {
-      loading: "fetching Data...",
-      success: "fetched all data !",
-      error: "error while fetching data !",
+      loading: "Hang on, loding...",
+      success: "Done !",
+      error: "Opps, Erorr ocured !",
     });
   };
 
