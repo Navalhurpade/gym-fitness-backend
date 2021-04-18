@@ -6,10 +6,12 @@ import {
   faMapMarkerAlt,
 } from "@fortawesome/free-solid-svg-icons";
 import GymInside from "./assets/gym-inside.jpg";
+import ScrollToTop from "./ScrollToTop";
 
 function contactUsPage(props) {
   return (
     <div className="contactUsPage">
+      <ScrollToTop />
       <section className="contactHeader">
         <h1>Walk in or Connect us via</h1>
         <p className="contact-p">

@@ -1,9 +1,11 @@
 import React from "react";
 import BlogCard from "./blogCard";
+import ScrollToTop from "./ScrollToTop";
 
 function BlogsPage({ blogs }) {
   return (
     <div className="blogs-container">
+      <ScrollToTop />
       {blogs.map((b) => (
         <BlogCard
           key={b._id}

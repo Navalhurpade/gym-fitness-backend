@@ -58,8 +58,8 @@ function HomePage(props) {
           <h4>Sushil</h4>
           <p>
             Hello Im profestional gym trainer. Training people since 2015. Im
-            having 10 year of experence in traing And educating people how to
-            get fit, And achive their fitness Goles...
+            having 5 year of experence in traing And educating people how to get
+            fit, And achive their fitness Goles...
           </p>
         </div>
       </section>

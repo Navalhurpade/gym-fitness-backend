@@ -6,6 +6,7 @@ import api from "../api/http";
 import toast, { Toaster } from "react-hot-toast";
 import { Redirect, useHistory } from "react-router-dom";
 import { isUserLoggedIn, loginUser } from "../api/userLogger";
+import ScrollToTop from "./ScrollToTop";
 
 const validationSchema = yup.object().shape({
   email: yup.string().email().label("Email").required(),
@@ -36,6 +37,7 @@ function Login(props) {
 
   return (
     <div className="login-page">
+      <ScrollToTop />
       <Toaster />
       <FormikForm
         initialValues={{ email: "", password: "" }}

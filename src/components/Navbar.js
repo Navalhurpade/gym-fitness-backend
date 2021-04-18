@@ -3,11 +3,13 @@ import logoWhite from "./assets/logo-white.svg";
 import logoBlack from "./assets/logo-black.svg";
 import singOut from "./assets/sign-out-alt-solid.svg";
 import singOutWhite from "./assets/sign-out-white.svg";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useHistory, useLocation } from "react-router-dom";
 import { isUserLoggedIn, loguotUser } from "../api/userLogger";
 
-function Navbar() {
+function Navbar({  }) {
   const { pathname } = useLocation();
+  const history = useHistory();
+
   const [atTop, setAtTop] = useState(
     pathname === "/" || pathname === "/adminPage"
   );
@@ -25,7 +27,7 @@ function Navbar() {
 
   const handleLogOut = () => {
     loguotUser();
-    return <Link to="/" />;
+    history.replace("/");
   };
 
   return (

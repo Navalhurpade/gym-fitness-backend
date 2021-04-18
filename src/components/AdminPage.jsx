@@ -4,6 +4,7 @@ import toast, { Toaster } from "react-hot-toast";
 import api from "./../api/http";
 import background from "./assets/sportsman.jpg";
 import ListGroup from "./ListGroup";
+import ScrollToTop from "./ScrollToTop";
 import Selector from "./Selector";
 
 const options = {
@@ -78,6 +79,7 @@ const AdminPage = () => {
 
   return (
     <div className="admin-page-container">
+      <ScrollToTop />
       <Toaster />
       <div className="admin-subcontainer ">
         <img src={background} alt="Gym-Background" className="background-img" />

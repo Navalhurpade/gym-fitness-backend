@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import { getReadableImgSrc } from "../util/utils";
+import ScrollToTop from "./ScrollToTop";
 
 function ReadBlog({ blogs }) {
   const { id } = useParams();
@@ -12,6 +13,7 @@ function ReadBlog({ blogs }) {
   const src = getReadableImgSrc(data.data, contentType);
   return (
     <div className="blog-details">
+      <ScrollToTop />
       <div className="blog-title">
         <h1>{currentBlog.title}</h1>
       </div>

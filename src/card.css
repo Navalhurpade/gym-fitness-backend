@@ -176,6 +176,9 @@ figcaption {
 .card-li:nth-child(2n) {
   color: var(--white-2);
 }
+.col {
+  flex-grow: 0 !important;
+}
 
 .card-li:not(:last-child)::after {
   content: "";
