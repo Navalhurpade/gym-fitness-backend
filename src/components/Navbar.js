@@ -6,7 +6,7 @@ import singOutWhite from "./assets/sign-out-white.svg";
 import { Link, useHistory, useLocation } from "react-router-dom";
 import { isUserLoggedIn, loguotUser } from "../api/userLogger";
 
-function Navbar({  }) {
+function Navbar() {
   const { pathname } = useLocation();
   const history = useHistory();
 

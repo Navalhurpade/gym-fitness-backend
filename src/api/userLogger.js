@@ -4,7 +4,6 @@ export async function loginUser(token, rememberMe) {
   if (rememberMe) await localStorage.setItem(authTokenKey, token);
   else await sessionStorage.setItem(authTokenKey, token);
 }
-
 export function loguotUser() {
   localStorage.removeItem(authTokenKey);
   sessionStorage.removeItem(authTokenKey);
