@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Form as FormikForm } from "./Forms";
 import LoginForm from "./LoginForm";
 import * as yup from "yup";
@@ -16,6 +16,10 @@ const validationSchema = yup.object().shape({
 function Login(props) {
   let history = useHistory();
   const [rememberMe, setRememberMe] = useState(false);
+
+  useEffect(() => {
+    alert("This is a demo account,\nuserName: demo@mail.com,\nPassword: 1234");
+  }, []);
 
   const user = isUserLoggedIn();
 
