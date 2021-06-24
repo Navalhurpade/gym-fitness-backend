@@ -5,7 +5,7 @@ function Footer(props) {
   return (
     <div className="footer">
       <p>
-        Copyright @SuhilKumar <br /> 2021
+        Copyright @NavalHurpade <br /> 2021
       </p>
       <SocialButtons />
     </div>

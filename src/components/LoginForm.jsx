@@ -21,6 +21,7 @@ function LoginForm({ rememberme, setRememberme }) {
               alt="User Icon"
             />
           </div>
+          {/* <text>Demo userName: demo@mail.com\nPassword: 1234</text> */}
 
           {/* <!-- Login Form --> */}
           <FormFeed

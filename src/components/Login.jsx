@@ -18,7 +18,9 @@ function Login(props) {
   const [rememberMe, setRememberMe] = useState(false);
 
   useEffect(() => {
-    alert("This is a demo account,\nuserName: demo@mail.com,\nPassword: 1234");
+    alert(
+      "This is a demo account, Automaticaly added !\nUSERNAME: demo@mail.com,\nPASSWORD: 1234"
+    );
   }, []);
 
   const user = isUserLoggedIn();
@@ -26,7 +28,6 @@ function Login(props) {
   if (user) return <Redirect to="/adminPage" />;
 
   const handleLogin = async (loginDetails) => {
-    console.log("logoin");
     const { ok, data, status } = await api.apiSauce.post("/auth", loginDetails);
     if (ok) {
       if (data) {
@@ -44,7 +45,7 @@ function Login(props) {
       <ScrollToTop />
       <Toaster />
       <FormikForm
-        initialValues={{ email: "", password: "" }}
+        initialValues={{ email: "demo@mail.com", password: "1234" }}
         onSubmit={handleLogin}
         validationSchema={validationSchema}
       >
