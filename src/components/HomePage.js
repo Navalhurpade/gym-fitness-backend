@@ -49,7 +49,7 @@ function HomePage(props) {
 
       <section className="quote-section">
         <div>
-          <h3>Meet Your coch</h3>
+          <h3>Meet Your Coach</h3>
         </div>
         <div className="couch-img">
           <img alt="couch-img" src={smilingMan} />
@@ -57,9 +57,9 @@ function HomePage(props) {
         <div className="couch-intro">
           <h4>Sushil</h4>
           <p>
-            Hello Im profestional gym trainer. Training people since 2015. Im
-            having 5 year of experence in traing And educating people how to get
-            fit, And achive their fitness Goles...
+            Hello I'm professional gym trainer. Training people since 2015. I
+            have 5 years of professional experience in traing And educating
+            people how to get fit, And achive their fitness goals...
           </p>
         </div>
       </section>
