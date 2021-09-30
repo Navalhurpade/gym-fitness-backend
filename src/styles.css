@@ -37,13 +37,29 @@ p {
   flex-direction: row;
 }
 
-.error-message {
-  color: red;
-}
-
 .users-container {
   display: grid;
   grid-template-columns: 3fr 1.2fr;
+}
+
+@media only screen and (max-width: 800px) {
+  .section-2 {
+    flex-direction: column;
+  }
+
+  .users-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    /* grid-template-rows: 1fr; */
+  }
+  .menu {
+    width: 100%;
+    margin-bottom: 50px;
+  }
+}
+
+.error-message {
+  color: red;
 }
 
 .float-right {
@@ -469,6 +485,7 @@ p {
 
 .blogs-container {
   margin-top: 20vh;
+  padding: 0 40px;
 }
 
 .blog-details {
