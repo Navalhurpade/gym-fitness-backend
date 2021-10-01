@@ -4,9 +4,9 @@
 
 ## Landing Page
 
-https://user-images.githubusercontent.com/68598490/135665989-001099de-4dcc-4315-8340-2fb48c188b68.mp4
+https://user-images.githubusercontent.com/68598490/135670264-a7042420-f13a-45e7-948b-e7271efa4787.mp4
 
-.
+
 .
 .
 ## Admin Page WIth Live Editing 
